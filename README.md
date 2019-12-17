@@ -1,1 +1,0 @@
-# servicestack-neo4j-auth-demo
