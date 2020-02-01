@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
   
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -11,12 +11,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="ServiceStack" Version="5.*" />
+    <PackageReference Include="ServiceStack" Version="5.8.0" />
   </ItemGroup>
   
   <ItemGroup>
-    <ProjectReference Include="..\ServiceStack.Authentication.Neo4j\ServiceStack.Authentication.Neo4j.csproj" />
-    <ProjectReference Include="..\ServiceStack.Caching.Neo4j\ServiceStack.Caching.Neo4j.csproj" />
     <ProjectReference Include="..\vue_spa.ServiceInterface\vue_spa.ServiceInterface.csproj" />
     <ProjectReference Include="..\vue_spa.ServiceModel\vue_spa.ServiceModel.csproj" />
   </ItemGroup>
