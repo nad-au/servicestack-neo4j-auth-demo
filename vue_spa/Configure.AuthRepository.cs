@@ -1,9 +1,11 @@
 using System;
 using System.Collections.Generic;
 using Microsoft.Extensions.DependencyInjection;
+using Neo4j.Driver;
 using ServiceStack;
 using ServiceStack.Web;
 using ServiceStack.Auth;
+using ServiceStack.Authentication.Neo4j;
 using ServiceStack.Configuration;
 
 namespace vue_spa
@@ -37,8 +39,9 @@ namespace vue_spa
     {
         public void Configure(IServiceCollection services)
         {
+            services.AddSingleton(c => GraphDatabase.Driver("bolt://localhost:7687"));
             services.AddSingleton<IAuthRepository>(c =>
-                new InMemoryAuthRepository<AppUser, UserAuthDetails>());
+                new Neo4jAuthRepository<AppUser, UserAuthDetails>(c.Resolve<IDriver>()));
         }
 
         public void Configure(IAppHost appHost)
