@@ -1,8 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using ServiceStack;
-using ServiceStack.Script;
 using ServiceStack.DataAnnotations;
 using vue_spa.ServiceModel;
 
@@ -17,6 +13,13 @@ namespace vue_spa.ServiceInterface
 
     public class MyServices : Service
     {
+        private readonly ITenant tenant;
+
+        public MyServices(ITenant tenant)
+        {
+            this.tenant = tenant;
+        }
+        
         //Return index.html for unmatched requests so routing is handled on client
         public object Any(FallbackForClientRoutes request) => Request.GetPageResult("/");
 
