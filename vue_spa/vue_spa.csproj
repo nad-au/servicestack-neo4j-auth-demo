@@ -13,7 +13,7 @@
   <ItemGroup>
     <PackageReference Include="Barnardos.ServiceStack.Authentication.Neo4j.Signed" Version="1.0.0" />
     <PackageReference Include="Barnardos.ServiceStack.Caching.Neo4j.Signed" Version="1.0.0" />
-    <PackageReference Include="ServiceStack" Version="5.8.0" />
+    <PackageReference Include="ServiceStack" Version="5.9.2" />
   </ItemGroup>
   
   <ItemGroup>
